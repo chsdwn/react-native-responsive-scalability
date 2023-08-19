@@ -1,1 +1,4 @@
-export type { IResponsiveScalabilityConfig } from './IResponsiveScalabilityConfig';
+export type {
+  IResponsiveScalabilityConfig,
+  IResponsiveScalabilityContext,
+} from './IResponsiveScalabilityContext';
