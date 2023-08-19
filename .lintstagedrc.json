@@ -1,0 +1,3 @@
+{
+  "*": ["npm run prettier:fix", "git add ."]
+}

@@ -27,13 +27,16 @@
     "!**/.*"
   ],
   "scripts": {
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
+    "bootstrap": "yarn example && yarn install",
+    "example": "yarn --cwd example",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepack": "bob build",
+    "prepare": "husky install",
+    "prettier:fix": "prettier --write . --ignore-unknown",
+    "prettier:lint": "prettier --check . --ignore-unknown",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "react-native",
@@ -63,7 +66,9 @@
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
     "jest": "^28.1.1",
+    "lint-staged": "^14.0.0",
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
     "react": "18.2.0",

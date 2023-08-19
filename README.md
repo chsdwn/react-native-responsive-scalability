@@ -30,11 +30,13 @@ The package offers utility hooks that assist React Native developers in creating
 ## Installation
 
 ### npm
+
 ```sh
 npm install react-native-responsive-scalability
 ```
 
 ### yarn
+
 ```sh
 yarn add react-native-responsive-scalability
 ```
@@ -55,6 +57,6 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/chsdwn/rea
 
 ## Acknowledgments
 
-* Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+- Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
 
 <p align="right">(<a href="#title">back to top</a>)</p>
