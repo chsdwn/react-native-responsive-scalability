@@ -1,7 +1,7 @@
 export type IResponsiveScalabilityContext = {
   baseWidth: number;
   baseHeight: number;
-  breakpoints?: {
+  breakpoints: {
     sm?: number;
     md?: number;
     lg?: number;

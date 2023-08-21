@@ -15,13 +15,16 @@ export const ResponsiveScalabilityProvider = ({
   config,
   children,
 }: IProviderProps) => {
+  const { baseHeight, baseWidth, breakpoints } = config || {};
+  const { sm, md, lg, xl } = breakpoints || {};
+
   const memoizedConfig: IResponsiveScalabilityContext = useMemo(() => {
     return {
-      baseWidth: config?.baseWidth || BASE_WIDTH,
-      baseHeight: config?.baseHeight || BASE_HEIGHT,
-      breakpoints: config?.breakpoints,
+      baseWidth: baseWidth || BASE_WIDTH,
+      baseHeight: baseHeight || BASE_HEIGHT,
+      breakpoints: { sm, md, lg, xl },
     };
-  }, [config]);
+  }, [baseHeight, baseWidth, sm, md, lg, xl]);
 
   return (
     <ResponsiveScalabilityContext.Provider value={memoizedConfig}>

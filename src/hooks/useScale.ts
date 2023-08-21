@@ -18,10 +18,10 @@ export const useScale = () => {
     const widthByRotation = isPortrait ? width : height;
 
     let divisor = 1;
-    if (breakpoints?.sm && breakpoints.sm <= widthByRotation) divisor = 2;
-    if (breakpoints?.md && breakpoints.md <= widthByRotation) divisor = 3;
-    if (breakpoints?.lg && breakpoints.lg <= widthByRotation) divisor = 4;
-    if (breakpoints?.xl && breakpoints.xl <= widthByRotation) divisor = 5;
+    if (breakpoints.sm && breakpoints.sm <= widthByRotation) divisor = 2;
+    if (breakpoints.md && breakpoints.md <= widthByRotation) divisor = 3;
+    if (breakpoints.lg && breakpoints.lg <= widthByRotation) divisor = 4;
+    if (breakpoints.xl && breakpoints.xl <= widthByRotation) divisor = 5;
     return widthByRotation / divisor;
   }, [breakpoints, height, width]);
 

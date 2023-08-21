@@ -7,4 +7,5 @@ export const ResponsiveScalabilityContext =
   createContext<IResponsiveScalabilityContext>({
     baseWidth: BASE_WIDTH,
     baseHeight: BASE_HEIGHT,
+    breakpoints: {},
   });
