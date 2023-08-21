@@ -92,12 +92,7 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
+  "packageManager": "^yarn@1.22.19",
   "release-it": {
     "git": {
       "commitMessage": "chore: release ${version}",
@@ -115,10 +110,6 @@
       }
     }
   },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
