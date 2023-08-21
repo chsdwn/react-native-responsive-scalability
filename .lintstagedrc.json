@@ -1,3 +1,5 @@
 {
-  "*": ["npm run prettier:fix", "git add ."]
+  "*.{json,js,ts,jsx,tsx,html,md}": ["npm run prettier:fix"],
+  "*.{js,jsx,ts,tsx}": ["npm run lint:fix"],
+  "src/**": ["npm run test"]
 }
