@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 export const useStyle = <TStyle extends ViewStyle | ImageStyle | TextStyle>(
-  styleCb: () => StyleProp<TStyle extends (infer U)[] ? U : TStyle>,
+  styleCb: () => StyleProp<TStyle>,
   deps?: DependencyList,
 ) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
