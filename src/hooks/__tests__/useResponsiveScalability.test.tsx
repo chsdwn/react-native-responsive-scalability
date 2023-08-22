@@ -2,8 +2,8 @@ import React from 'react';
 import { renderHook, WrapperComponent } from '@testing-library/react-hooks';
 
 import { ResponsiveScalabilityProvider } from '../../core';
-import { useResponsiveScalability } from '../../hooks';
 import { IResponsiveScalabilityConfig } from '../../types';
+import { useResponsiveScalability } from '../useResponsiveScalability';
 
 const wrapper: WrapperComponent<{
   config: IResponsiveScalabilityConfig;
