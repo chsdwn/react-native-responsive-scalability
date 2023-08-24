@@ -1,2 +1,2 @@
-export const BASE_WIDTH = 360;
-export const BASE_HEIGHT = 800;
+export const BASE_WIDTH = 430;
+export const BASE_HEIGHT = 932;
