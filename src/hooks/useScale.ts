@@ -10,8 +10,8 @@ export const useScale = () => {
 
   const windowWidth = useMemo(() => {
     let divisor = 1;
-    if (breakpoints?.sm && breakpoints.sm <= width) divisor = 2;
-    if (breakpoints?.md && breakpoints.md <= width) divisor = 3;
+    if (breakpoints.sm <= width) divisor = 2;
+    if (breakpoints.md <= width) divisor = 3;
     if (breakpoints?.lg && breakpoints.lg <= width) divisor = 4;
     if (breakpoints?.xl && breakpoints.xl <= width) divisor = 5;
     return width / divisor;

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { BASE_HEIGHT, BASE_WIDTH } from '../config';
+import { BASE_HEIGHT, BASE_WIDTH, BREAKPOINTS } from '../config';
 import {
   IResponsiveScalabilityConfig,
   IResponsiveScalabilityContext,
@@ -22,7 +22,12 @@ export const ResponsiveScalabilityProvider = ({
     return {
       baseWidth: baseWidth || BASE_WIDTH,
       baseHeight: baseHeight || BASE_HEIGHT,
-      breakpoints: { sm, md, lg, xl },
+      breakpoints: {
+        sm: sm || BREAKPOINTS.sm,
+        md: md || BREAKPOINTS.md,
+        lg,
+        xl,
+      },
     };
   }, [baseHeight, baseWidth, sm, md, lg, xl]);
 
