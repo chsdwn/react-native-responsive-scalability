@@ -3,7 +3,7 @@
   <h3 align="center">React Native Responsive Scalability</h3>
   
   <p align="center">
-    The package offers utility hooks that assist React Native developers in creating responsive cross-platform applications.
+    The package provides utility hooks that help React Native developers create responsive, cross-platform applications that are aware of orientation changes.
     <br />
     <br />
     <a href="https://github.com/chsdwn/react-native-responsive-scalability/issues">Report Bug</a>
@@ -25,7 +25,7 @@
 
 ## About the Project
 
-The package offers utility hooks that assist React Native developers in creating responsive cross-platform applications.
+The package provides utility hooks that help React Native developers create responsive, cross-platform applications that are aware of orientation changes.
 
 ## Installation
 
