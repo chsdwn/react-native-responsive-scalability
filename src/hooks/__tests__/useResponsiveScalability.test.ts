@@ -1,17 +1,7 @@
-import React from 'react';
-import { renderHook, WrapperComponent } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
-import { ResponsiveScalabilityProvider } from '../../core';
-import { IResponsiveScalabilityConfig } from '../../types';
+import { wrapper } from '../../test/test-utils';
 import { useResponsiveScalability } from '../useResponsiveScalability';
-
-const wrapper: WrapperComponent<{
-  config: IResponsiveScalabilityConfig;
-}> = ({ config, children }) => (
-  <ResponsiveScalabilityProvider config={config}>
-    {children}
-  </ResponsiveScalabilityProvider>
-);
 
 describe('[useResponsiveScalability()]', () => {
   it('should detect baseHeight change', () => {
