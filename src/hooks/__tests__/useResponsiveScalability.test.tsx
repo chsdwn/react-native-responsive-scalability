@@ -52,4 +52,17 @@ describe('[useResponsiveScalability()]', () => {
     rerender({ config: { breakpoints: { sm } } });
     expect(result.current.breakpoints.sm).toBe(sm);
   });
+
+  it('should detect orientation change', () => {
+    let baseOrientation: 'portrait' | 'landscape' = 'portrait';
+    const { rerender, result } = renderHook(() => useResponsiveScalability(), {
+      wrapper,
+      initialProps: { config: { baseOrientation } },
+    });
+    expect(result.current.baseOrientation).toBe(baseOrientation);
+
+    baseOrientation = 'landscape';
+    rerender({ config: { baseOrientation } });
+    expect(result.current.baseOrientation).toBe(baseOrientation);
+  });
 });
