@@ -5,15 +5,16 @@ type IBreakpoints = {
   xl?: number;
 };
 
-type IBaseDimensions = {
+type IBaseConfig = {
   baseWidth: number;
   baseHeight: number;
+  baseOrientation: 'portrait' | 'landscape';
 };
 
-export type IResponsiveScalabilityContext = IBaseDimensions & {
+export type IResponsiveScalabilityContext = IBaseConfig & {
   breakpoints: IBreakpoints;
 };
 
-export type IResponsiveScalabilityConfig = Partial<IBaseDimensions> & {
+export type IResponsiveScalabilityConfig = Partial<IBaseConfig> & {
   breakpoints?: Partial<IBreakpoints>;
 };

@@ -1,15 +1,18 @@
 import { useCallback, useMemo } from 'react';
-import { Dimensions, PixelRatio } from 'react-native';
+import { PixelRatio } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 import { useResponsiveScalability } from './useResponsiveScalability';
 
-const { height: initialHeight, width: initialWidth } = Dimensions.get('window');
-const windowHeight = Math.max(initialHeight, initialWidth);
-
 export const useScale = () => {
-  const { width } = useSafeAreaFrame();
-  const { baseHeight, baseWidth, breakpoints } = useResponsiveScalability();
+  const { height, width } = useSafeAreaFrame();
+  const { baseHeight, baseWidth, baseOrientation, breakpoints } =
+    useResponsiveScalability();
+
+  const windowHeight = useMemo(() => {
+    if (baseOrientation === 'portrait') return Math.max(height, width);
+    return Math.min(height, width);
+  }, [baseOrientation, height, width]);
 
   const windowWidth = useMemo(() => {
     let divisor = 1;
@@ -24,7 +27,7 @@ export const useScale = () => {
     (size: number) => {
       return PixelRatio.roundToNearestPixel(size * (windowHeight / baseHeight));
     },
-    [baseHeight],
+    [baseHeight, windowHeight],
   );
 
   const scaleByWidth = useCallback(

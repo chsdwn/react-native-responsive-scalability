@@ -1,6 +1,11 @@
 import React, { useMemo } from 'react';
 
-import { BASE_HEIGHT, BASE_WIDTH, BREAKPOINTS } from '../config';
+import {
+  BASE_HEIGHT,
+  BASE_WIDTH,
+  BASE_ORIENTATION,
+  BREAKPOINTS,
+} from '../config';
 import {
   IResponsiveScalabilityConfig,
   IResponsiveScalabilityContext,
@@ -15,13 +20,14 @@ export const ResponsiveScalabilityProvider = ({
   config,
   children,
 }: IProviderProps) => {
-  const { baseHeight, baseWidth, breakpoints } = config || {};
+  const { baseHeight, baseWidth, breakpoints, baseOrientation } = config || {};
   const { sm, md, lg, xl } = breakpoints || {};
 
   const memoizedConfig: IResponsiveScalabilityContext = useMemo(() => {
     return {
       baseWidth: baseWidth || BASE_WIDTH,
       baseHeight: baseHeight || BASE_HEIGHT,
+      baseOrientation: baseOrientation || BASE_ORIENTATION,
       breakpoints: {
         sm: sm || BREAKPOINTS.sm,
         md: md || BREAKPOINTS.md,
@@ -29,7 +35,7 @@ export const ResponsiveScalabilityProvider = ({
         xl,
       },
     };
-  }, [baseHeight, baseWidth, sm, md, lg, xl]);
+  }, [baseHeight, baseWidth, baseOrientation, sm, md, lg, xl]);
 
   return (
     <ResponsiveScalabilityContext.Provider value={memoizedConfig}>
