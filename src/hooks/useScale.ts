@@ -1,12 +1,15 @@
 import { useCallback, useMemo } from 'react';
-import { PixelRatio } from 'react-native';
+import { Dimensions, PixelRatio } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 
 import { useResponsiveScalability } from './useResponsiveScalability';
 
+const { height: initialHeight, width: initialWidth } = Dimensions.get('window');
+const windowHeight = Math.max(initialHeight, initialWidth);
+
 export const useScale = () => {
+  const { width } = useSafeAreaFrame();
   const { baseHeight, baseWidth, breakpoints } = useResponsiveScalability();
-  const { height, width } = useSafeAreaFrame();
 
   const windowWidth = useMemo(() => {
     let divisor = 1;
@@ -19,10 +22,9 @@ export const useScale = () => {
 
   const scaleByHeight = useCallback(
     (size: number) => {
-      const windowHeight = Math.max(height, width);
       return PixelRatio.roundToNearestPixel(size * (windowHeight / baseHeight));
     },
-    [baseHeight, height, width],
+    [baseHeight],
   );
 
   const scaleByWidth = useCallback(
@@ -32,14 +34,5 @@ export const useScale = () => {
     [baseWidth, windowWidth],
   );
 
-  const scaleFontSizeByWidth = useCallback(
-    (fontSize: number) => {
-      return PixelRatio.roundToNearestPixel(
-        (fontSize * windowWidth) / baseWidth,
-      );
-    },
-    [baseWidth, windowWidth],
-  );
-
-  return { scaleByHeight, scaleByWidth, scaleFontSizeByWidth };
+  return { scaleByHeight, scaleByWidth };
 };
