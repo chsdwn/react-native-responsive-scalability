@@ -16,6 +16,9 @@ const config: IResponsiveScalabilityConfig = {
   // baseWidth: 430,
   // baseHeight: 932,
 
+  // # "landscape" option can be selected. Default base orientation is "portrait".
+  // baseOrientation: 'portrait',
+
   breakpoints: {
     // # Default breakpoints
     // sm: 640,

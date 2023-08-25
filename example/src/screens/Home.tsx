@@ -11,17 +11,20 @@ const boxHeight = 100;
 const boxWidth = 100;
 const fontSize = 16;
 export const Home = () => {
-  const { baseWidth, baseHeight, breakpoints } = useResponsiveScalability();
-  const { scaleByHeight, scaleByWidth, scaleFontSizeByWidth } = useScale();
+  const { baseWidth, baseHeight, baseOrientation, breakpoints } =
+    useResponsiveScalability();
+  const { scaleByHeight, scaleByWidth } = useScale();
   const { height, width } = useSafeAreaFrame();
 
   const textStyle = useStyle(() => ({
-    fontSize: scaleFontSizeByWidth(fontSize),
+    fontSize: scaleByWidth(fontSize),
   }));
 
   const isWidthOverflowSmBreakpoint = useMemo(() => {
     return width >= breakpoints.sm;
   }, [width, breakpoints.sm]);
+
+  const orientation = height > width ? 'Portrait' : 'Landscape';
 
   const breakpointsText = Object.entries(breakpoints || {})
     .filter(([_, value]) => value)
@@ -32,8 +35,8 @@ export const Home = () => {
     <View style={styles.container}>
       <Text
         style={useStyle(
-          () => [styles.noteText, { fontSize: scaleFontSizeByWidth(12) }],
-          [scaleFontSizeByWidth],
+          () => [styles.noteText, { fontSize: scaleByWidth(12) }],
+          [scaleByWidth],
         )}
       >
         Change orientation to check style changes by breakpoints
@@ -64,7 +67,11 @@ export const Home = () => {
             Base height: {baseHeight} - Window height: {height}
           </Text>
           <Text style={textStyle}>
-            Font size {fontSize} scaled to {scaleFontSizeByWidth(fontSize)}
+            Base orientation: {baseOrientation} - Device orientation:{' '}
+            {orientation}
+          </Text>
+          <Text style={textStyle}>
+            Font size {fontSize} scaled to {scaleByWidth(fontSize)}
           </Text>
           <Text style={textStyle}>Breakpoints: {breakpointsText}</Text>
         </View>
@@ -79,18 +86,18 @@ export const Home = () => {
             Box height {boxHeight} scaled to {scaleByHeight(boxHeight)}
           </Text>
           <Text style={textStyle}>
-            Box width {boxWidth} scaled to {scaleByWidth(boxWidth)}
+            Box width {boxWidth} scaled to {scaleByHeight(boxWidth)}
           </Text>
           <View
             style={useStyle(
               () => [
                 styles.box,
                 {
-                  width: scaleByWidth(boxWidth),
+                  width: scaleByHeight(boxWidth),
                   height: scaleByHeight(boxHeight),
                 },
               ],
-              [scaleByHeight, scaleByWidth],
+              [scaleByHeight],
             )}
           />
         </View>
