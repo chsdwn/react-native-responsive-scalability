@@ -49,6 +49,8 @@ The package provides utility hooks that help React Native developers create resp
 
 #### `react-native-safe-area-context`
 
+##### React Native CLI
+
 ```sh
 npm install react-native-safe-area-context
 ```
@@ -62,6 +64,12 @@ yarn add react-native-safe-area-context
   ```sh
   npx pod-install
   ```
+
+##### Expo
+
+```sh
+npx expo install react-native-safe-area-context
+```
 
 Add `<SafeAreaProvider>` in your app root component.
 
