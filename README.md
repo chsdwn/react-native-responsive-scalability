@@ -41,7 +41,135 @@
 
 ## About the Project
 
+![React Native Responsive Scalability overview](./screenshots/overview.jpg 'React Native Responsive Scalability overview')
+
 The package provides utility hooks that help React Native developers create responsive, cross-platform applications that are aware of orientation changes.
+
+### Screenshots
+
+#### iOS
+
+<details>
+  <summary>iPhone 8</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/iOS/iPhone%208.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/iOS/iPhone%208%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>iPhone 14 Pro Max</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/iOS/iPhone%2014%20Pro%20Max.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/iOS/iPhone%2014%20Pro%20Max%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>iPad Air</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/iOS/iPad%20Air.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/iOS/iPad%20Air%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>iPad Pro</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/iOS/iPad%20Pro.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/iOS/iPad%20Pro%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+#### Android
+
+<details>
+  <summary>Pixel 2</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/Android/Pixel%202.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/Android/Pixel%202%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>Pixel 7 Pro</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/Android/Pixel%207%20Pro.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/Android/Pixel%207%20Pro%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>Nexus 9</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/Android/Nexus%209.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/Android/Nexus%209%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
+
+<details>
+  <summary>Nexus 10</summary>
+  <ul>
+    <li>
+      <p>Portrait</p>
+      <img src="./screenshots/Android/Nexus%2010.png" style="width: 430px;">
+    </li>
+    <br/>
+    <li>
+      <p>Landscape</p>
+      <img src="./screenshots/Android/Nexus%2010%20Landscape.png" style="height: 430px;">
+    </li>
+  </ul>
+</details>
 
 ## Getting Started
 
@@ -110,9 +238,9 @@ yarn add react-native-responsive-scalability
 
 ## Usage
 
-For usage details, please refer to the `src` folder of the example app.
+For usage details, please refer to the `src` folder of the example app. https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example/src
 
-https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example/src
+For a more complex example, please take a look at my another project. https://github.com/chsdwn/FreeToGameApp
 
 <p align="right">(<a href="#title">back to top</a>)</p>
 
