@@ -15,7 +15,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#screenshots">Screenshots</a></li>
+      </ul>
+    </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -41,9 +46,9 @@
 
 ## About the Project
 
-![React Native Responsive Scalability overview](./screenshots/overview.jpg 'React Native Responsive Scalability overview')
+<p align="center">Take a look at the image and compare scaled and not scaled screenshots on both iOS and Android devices.</p>
 
-The package provides utility hooks that help React Native developers create responsive, cross-platform applications that are aware of orientation changes.
+![React Native Responsive Scalability overview](./screenshots/overview.jpg 'React Native Responsive Scalability overview')
 
 ### Screenshots
 
@@ -112,16 +117,16 @@ The package provides utility hooks that help React Native developers create resp
 #### Android
 
 <details>
-  <summary>Pixel 2</summary>
+  <summary>Nexus 5</summary>
   <ul>
     <li>
       <p>Portrait</p>
-      <img src="./screenshots/Android/Pixel%202.png" style="width: 430px;">
+      <img src="./screenshots/Android/Nexus%205.png" style="width: 430px;">
     </li>
     <br/>
     <li>
       <p>Landscape</p>
-      <img src="./screenshots/Android/Pixel%202%20Landscape.png" style="height: 430px;">
+      <img src="./screenshots/Android/Nexus%205%20Landscape.png" style="height: 430px;">
     </li>
   </ul>
 </details>
