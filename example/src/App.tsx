@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import {
@@ -6,7 +6,7 @@ import {
   ResponsiveScalabilityProvider,
 } from 'react-native-responsive-scalability';
 
-import { Home } from './screens';
+import { Article, Articles } from './screens';
 
 const config: IResponsiveScalabilityConfig = {
   // # Change the baseWidth and baseHeight values according to the dimensions
@@ -27,11 +27,26 @@ const config: IResponsiveScalabilityConfig = {
   },
 };
 export default function App() {
+  const [screen, setScreen] = useState<'article' | 'articles'>('articles');
+
+  const handleArticlePressed = () => {
+    setScreen('article');
+  };
+
+  const handleGoBackPressed = () => {
+    setScreen('articles');
+  };
+
   return (
     <SafeAreaProvider>
       <ResponsiveScalabilityProvider config={config}>
         <SafeAreaView style={styles.container}>
-          <Home />
+          {screen === 'article' && (
+            <Article onGoBackPress={handleGoBackPressed} />
+          )}
+          {screen === 'articles' && (
+            <Articles onArticlePress={handleArticlePressed} />
+          )}
         </SafeAreaView>
       </ResponsiveScalabilityProvider>
     </SafeAreaProvider>
@@ -41,6 +56,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: '#aaa',
   },
 });
