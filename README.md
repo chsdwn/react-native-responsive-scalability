@@ -245,7 +245,9 @@ yarn add react-native-responsive-scalability
 
 For usage details, please refer to the `src` folder of the example app. https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example/src
 
-For a more complex example, please take a look at my another project. https://github.com/chsdwn/FreeToGameApp
+For interactive demo: https://snack.expo.dev/@chsdwn/responsive-scalability-example
+
+For a more complex example, please take a look at my demo project. https://github.com/chsdwn/FreeToGameApp
 
 <p align="right">(<a href="#title">back to top</a>)</p>
 
@@ -344,7 +346,7 @@ The `useScale` hook returns scale utility functions `scaleByHeight` and `scaleBy
 import React from 'react';
 import { useScale } from 'react-native-responsive-scalability';
 
-const size = 10;
+const size = 16;
 
 export const Home = () => {
   const { scaleByHeight, scaleByWidth } = useScale();
