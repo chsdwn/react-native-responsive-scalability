@@ -15,12 +15,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#screenshots">Screenshots</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -33,7 +28,9 @@
       <a href="#api">API</a>
       <ul>
         <li><a href="#responsivescalabilityprovider">ResponsiveScalabilityProvider</li>
+        <li><a href="#useorientation">useOrientation</li>
         <li><a href="#useresponsivescalability">useResponsiveScalability</li>
+        <li><a href="#usesafeareawindow">useSafeAreaWindow</li>
         <li><a href="#usescale">useScale</li>
         <li><a href="#usestyle">useStyle</li>
       </ul>
@@ -46,135 +43,15 @@
 
 ## About the Project
 
-<p align="center">Take a look at the image and compare scaled and not scaled screenshots on both iOS and Android devices.</p>
+<p align="center">Take a look at the images below and compare scaled and not scaled screenshots on both iOS and Android devices for landscape and portrait modes.</p>
 
-![React Native Responsive Scalability overview](./screenshots/overview.jpg 'React Native Responsive Scalability overview')
+### Portrait
 
-### Screenshots
+![React Native Responsive Scalability Portrait Overview](./screenshots/overview.jpg 'React Native Responsive Scalability Portrait Overview')
 
-#### iOS
+### Landscape
 
-<details>
-  <summary>iPhone 8</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/iOS/iPhone%208.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/iOS/iPhone%208%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>iPhone 14 Pro Max</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/iOS/iPhone%2014%20Pro%20Max.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/iOS/iPhone%2014%20Pro%20Max%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>iPad Air</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/iOS/iPad%20Air.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/iOS/iPad%20Air%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>iPad Pro</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/iOS/iPad%20Pro.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/iOS/iPad%20Pro%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-#### Android
-
-<details>
-  <summary>Nexus 5</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/Android/Nexus%205.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/Android/Nexus%205%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>Pixel 7 Pro</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/Android/Pixel%207%20Pro.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/Android/Pixel%207%20Pro%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>Nexus 9</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/Android/Nexus%209.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/Android/Nexus%209%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
-
-<details>
-  <summary>Nexus 10</summary>
-  <ul>
-    <li>
-      <p>Portrait</p>
-      <img src="./screenshots/Android/Nexus%2010.png" style="width: 430px;">
-    </li>
-    <br/>
-    <li>
-      <p>Landscape</p>
-      <img src="./screenshots/Android/Nexus%2010%20Landscape.png" style="height: 430px;">
-    </li>
-  </ul>
-</details>
+![React Native Responsive Scalability Landscape Overview](./screenshots/overview%20landscape.jpg 'React Native Responsive Scalability Landscape Overview')
 
 ## Getting Started
 
@@ -306,6 +183,24 @@ export const App = () => {
 };
 ```
 
+### useOrientation
+
+Use `useOrientation` hook to retrieve current orientation of the device.
+
+#### Example
+
+```tsx
+import React from 'react';
+import { useOrientation } from 'react-native-responsive-scalability';
+
+export const Home = () => {
+  const orientation = useOrientation();
+  const isPortrait = orientation === 'portrait';
+
+  return <></>;
+};
+```
+
 ### useResponsiveScalability
 
 Use `useResponsiveScalability` hook to retrieve `baseHeight`, `baseWidth`, `baseOrientation`, and `breakpoints` values.
@@ -333,6 +228,23 @@ export const Home = () => {
       ...
     />
   );
+};
+```
+
+### useSafeAreaWindow
+
+The `useSafeAreaWindow` hook provides the device's window dimensions, including `height` and `width`. These values are calculated by subtracting the height of the status bar and the height of the bottom navigation bar, depending on the current orientation of the device.
+
+#### Example
+
+```tsx
+import React from 'react';
+import { useSafeAreaWindow } from 'react-native-responsive-scalability';
+
+export const Home = () => {
+  const { height, width } = useSafeAreaWindow();
+
+  return <></>;
 };
 ```
 
