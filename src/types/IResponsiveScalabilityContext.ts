@@ -5,10 +5,12 @@ type IBreakpoints = {
   xl?: number;
 };
 
+export type IOrientation = 'portrait' | 'landscape';
+
 type IBaseConfig = {
   baseWidth: number;
   baseHeight: number;
-  baseOrientation: 'portrait' | 'landscape';
+  baseOrientation: IOrientation;
 };
 
 export type IResponsiveScalabilityContext = IBaseConfig & {
