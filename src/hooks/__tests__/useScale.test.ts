@@ -1,10 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import {
-  mockUseSafeAreaFrameLandscape,
-  mockUseSafeAreaFramePortrait,
-  wrapper,
-} from '../../test/test-utils';
+import { mockLandscape, mockPortrait, wrapper } from '../../test/test-utils';
 import { useScale } from '../useScale';
 
 beforeEach(() => {
@@ -13,7 +9,7 @@ beforeEach(() => {
 
 describe('[useScale]', () => {
   it('should scale size value by height', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result } = renderHook(() => useScale(), { wrapper });
 
     const { scaleByHeight } = result.current;
@@ -22,7 +18,7 @@ describe('[useScale]', () => {
   });
 
   it('should scale size value by width', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result } = renderHook(() => useScale(), { wrapper });
 
     const { scaleByWidth } = result.current;
@@ -31,7 +27,7 @@ describe('[useScale]', () => {
   });
 
   it('should scale size value by height on landscape mode', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result } = renderHook(() => useScale(), {
       wrapper,
       initialProps: { config: { baseOrientation: 'landscape' } },
@@ -43,7 +39,7 @@ describe('[useScale]', () => {
   });
 
   it('should scale size value by width on landscape mode', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result } = renderHook(() => useScale(), {
       wrapper,
       initialProps: { config: { baseOrientation: 'landscape' } },
@@ -55,28 +51,24 @@ describe('[useScale]', () => {
   });
 
   it('should recalculate the same value scaled by height even when the orientation changes', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result, rerender } = renderHook(() => useScale(), { wrapper });
 
-    const size = 10;
-    const { scaleByHeight } = result.current;
-    const portraitSize = scaleByHeight(size);
-
-    mockUseSafeAreaFrameLandscape();
+    mockLandscape();
     rerender();
 
     const { scaleByHeight: scaleByHeightLandscape } = result.current;
-    expect(scaleByHeightLandscape(size)).toBe(portraitSize);
+    expect(scaleByHeightLandscape(10)).toBe(10);
   });
 
   it('should recalculate the value scaled by width when the orientation changes', () => {
-    mockUseSafeAreaFramePortrait();
+    mockPortrait();
     const { result, rerender } = renderHook(() => useScale(), { wrapper });
 
-    mockUseSafeAreaFrameLandscape();
+    mockLandscape();
     rerender();
 
     const { scaleByWidth: scaleByWidthLandscape } = result.current;
-    expect(scaleByWidthLandscape(10)).toBe(11);
+    expect(scaleByWidthLandscape(10)).toBe(9.5);
   });
 });
