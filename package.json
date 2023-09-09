@@ -1,6 +1,6 @@
 {
   "name": "react-native-responsive-scalability",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "The package provides utility hooks that help React Native developers create responsive, cross-platform applications that are aware of orientation changes.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

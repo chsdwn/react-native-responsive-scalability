@@ -1,3 +1,9 @@
 export { ResponsiveScalabilityProvider } from './core';
-export { useResponsiveScalability, useScale, useStyle } from './hooks';
+export {
+  useOrientation,
+  useResponsiveScalability,
+  useSafeAreaWindow,
+  useScale,
+  useStyle,
+} from './hooks';
 export type { IResponsiveScalabilityConfig } from './types';
